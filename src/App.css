@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    user-select: text;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: hsl(236, 33%, 92%);
+}
+
+#header_desc {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+#heading {
+    color: white;
+    letter-spacing: 10px;
+    cursor: default;
+}
+
+#header_desc img {
+    height: max-content;
+    cursor: pointer;
+}
+
+#input_container {
+    width: 40%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.check_button {
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.check_button img, .check_img {
+    width: 0.7rem;
+    height: 0.7rem;
+}
+
+#checkButton img {
+    opacity: 0;
+}
+
+.checked {
+    background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.checked img {
+    opacity: 1;
+}
+
+.not_checked img {
+    opacity: 0;
+}
+
+#input {
+    width: 92.5%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+#todos_container, #active_todos_container {
+    border-radius: 5px;
+}
+
+#todos_container ul {
+    list-style-type: none;
+    display: flex;
+    width: 84.5%;
+}
+
+.item_container {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item_container button {
+    width: 4.7%;
+}
+
+.item_container:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.item_container li {
+    line-height: 24px;
+    overflow: scroll;
+}
+
+.checked_item {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.not_checked_item {
+    text-decoration: none;
+}
+
+.close_icon {
+    cursor: pointer;
+    color: hsl(235, 19%, 35%);
+    border-radius: 50%;
+}
+
+#addTodoAlert {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    color: #ffeb00;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    cursor: default;
+}
+
+#filter_main {
+    width: 40%;
+    position: absolute;
+    top: 12rem;
+}
+
+#filter_todos_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: hsl(236, 9%, 61%);
+}
+
+#filter_todos_container div:not(#items_left) {
+    cursor: pointer;
+}
+
+#filter_todos {
+    color: hsl(236, 9%, 61%);
+}
+
+.filter_todos_default {
+    display: flex;
+}
+
+.filter_todos_media {
+    display: none;
+}
+
+.filters {
+    margin: 0 0.3rem;
+}
+
+.active {
+    color: hsl(192, 63%, 46%);
+}
+
+#drag_todos {
+    color: hsl(236, 9%, 61%);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* Light theme styling */
+
+.top_header_light {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-size: 100% 100%;
+    background: url(./images/bg-desktop-light.jpg);
+}
+
+.input_container_light {
+    background-color: white;
+}
+
+.input_light {
+    background-color: white;
+    border: 1px solid rgb(206, 206, 206);
+}
+
+.todo_list_light {
+    background-color: white;
+    color: hsl(236, 9%, 61%);
+    border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
+.todo_list_light li {
+    color: hsl(235, 19%, 35%);
+}
+
+.todo_list_light i {
+    color: hsl(235, 19%, 35%);
+}
+
+.filter_todos_light {
+    background-color: white;
+}
+
+.filter_todos_hover_light div:hover, .filter_todos_hover_light + #clear_completed:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+/* Dark theme styling */
+
+.top_header_dark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-size: 100% 100%;
+    background: url(./images/bg-desktop-dark.jpg);
+}
+
+.input_container_dark {
+    background-color: hsl(237, 14%, 26%);
+}
+
+.input_dark {
+    background-color: hsl(237, 14%, 26%);
+    color: hsl(233, 11%, 84%);
+    border: 1px solid rgb(110, 110, 110);
+}
+
+.todo_list_dark {
+    background-color: hsl(237, 14%, 26%);
+    color: hsl(233, 11%, 84%);
+    border-bottom: 1px solid hsl(234, 11%, 52%);
+}
+
+.input_dark::placeholder {
+    color: hsl(233, 11%, 84%);
+}
+
+.todo_list_dark li {
+    color: hsl(236, 33%, 92%);
+}
+
+.todo_list_dark i {
+    color: hsl(236, 9%, 61%);
+}
+
+.filter_todos_dark {
+    background-color: hsl(237, 14%, 26%);
+}
+
+.filter_todos_hover_dark div:hover, .filter_todos_hover_dark + #clear_completed:hover {
+    color: hsl(236, 33%, 92%);
+}
+
+
+@media screen and (max-width: 1300px) {
+    #header_desc, #input_container, #filter_main {
+        width: 50%;
+    }
+    .item_container button {
+        width: unset;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #header_desc, #input_container, #filter_main {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #header_desc, #input_container, #filter_main {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #header_desc, #input_container, #filter_main {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .top_header_light {
+        background: url(./images/bg-mobile-light.jpg);
+        background-size: 100% 100%;
+    }
+
+    .top_header_dark {
+        background: url(./images/bg-mobile-dark.jpg);
+        background-size: 100% 100%;
+    }
+
+    #input {
+        width: 90%;
+    }
+
+    #todos_container ul {
+        width: 80%;
+    }
+
+    .filter_todos_default {
+        display: none;
+    }
+
+    .filter_todos_media {
+        display: flex;
+        padding: 15px;
+        width: 100%;
+        border-radius: 5px;
+        justify-content: space-evenly;
+        margin-top: 1.25rem;
+    }
+
+    .filter_todos_media_light {
+        background-color: white;
+    }
+
+    .filter_todos_media_dark {
+        background-color: hsl(237, 14%, 26%);
+    }
+
+    .filter_todos_hover_light div:hover {
+        color: hsl(192, 63%, 46%);
+    }
+
+    .filter_todos_hover_light + #clear_completed:hover {
+        color: hsl(236, 9%, 61%);
+    }
+
+    .filter_todos_hover_dark div:hover {
+        color: hsl(192, 63%, 46%);
+    }
+
+    .filter_todos_hover_dark + #clear_completed:hover {
+        color: hsl(236, 9%, 61%);
+    }
+}
+
+
+
+
+
